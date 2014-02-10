@@ -1,0 +1,23 @@
+<div ng-include="'partials/navbar'"></div>
+
+<div class="jumbotron">
+  <h1>Browse</h1>
+  <p class="lead">
+    Enhance artwork with meaningful description.
+  </p>
+</div>
+
+<div ng-controller="ArtistCtrl">
+  <div class="row marketing">
+    <div>
+      <div class="col-xs-4" ng-repeat="artwork in artworks.items">
+        <img class="img-responsive" src="https://dase.laits.utexas.edu{{artwork.media.viewitem}}" />
+        {{artwork.metadata.agent[0]}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>This is a footer.</p>
+</div>

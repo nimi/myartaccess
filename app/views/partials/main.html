@@ -1,0 +1,20 @@
+<div ng-include="'partials/navbar'"></div>
+
+<div class="jumbotron">
+  <h1>my art access</h1>
+  <p class="lead">
+    Enhance artwork with meaningful description.
+  </p>
+  <p><a class="btn btn-lg btn-success" ng-href="#">Browse Collection!</a></p>
+</div>
+
+<div class="row marketing">
+  <div ng-repeat="thing in awesomeThings">
+      <h4>{{thing.name}}</h4>
+      <p>{{thing.info}}</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>This is a footer.</p>
+</div>
