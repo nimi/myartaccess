@@ -3,15 +3,15 @@
 angular.module('myApp')
   .controller('ArtistCtrl', function ($scope, Dase) {
 
+    $scope.imagelink = '';
+
     Dase.get().then(
       function (data) {
-        $scope.artworks = data;
+        $scope.artworks = data.items;
       },
       function (error) {
         $scope.error = error;
       });
-
-    $scope.artworks = Dase;
 
     $scope.formatName = function(name) {
       return name.split(', ').reverse().join(' ');
