@@ -8,11 +8,10 @@
 </div>
 
 <div ng-controller="ArtistCtrl">
-  <div class="row marketing">
-    <div>
-      <div class="col-xs-4" ng-repeat="artwork in artworks.items">
-        <img class="img-responsive" src="https://dase.laits.utexas.edu{{artwork.media.viewitem}}" />
-        {{artwork.metadata.agent[0]}}
+  <div class="row">
+    <div ng-repeat="artwork in artworks | unique:'metadata.agent[0]'">
+      <div class="col-sm-6">
+        <artwork imglink="{{artwork.media.viewitem}}">{{artwork.metadata.agent[0]}}</artwork>
       </div>
     </div>
   </div>
