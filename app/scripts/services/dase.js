@@ -2,11 +2,20 @@
 
 angular.module('myApp')
   .factory('Dase', function ($rootScope, $http, $q) {
-    var server = 'https://dase.laits.utexas.edu/search.json';
+
+    var url = 'https://dase.laits.utexas.edu/search.json?callback=JSON_CALLBACK';
+
     return {
       get: function(){
         var deferred = new $q.defer();
-        $http.jsonp(server+'?callback=JSON_CALLBACK&c=blanton')
+        $http.jsonp(url,
+        {
+          max: 100,
+          //cache: true,
+          params: {
+            c: 'blanton'
+          }
+        })
           .success(function(resp) {
             deferred.resolve(resp);
           })
